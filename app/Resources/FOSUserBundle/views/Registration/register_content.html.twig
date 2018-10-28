@@ -7,3 +7,38 @@
                value="{{ 'registration.submit'|trans }}" />
     </div>
 {{ form_end(form) }}
+<form class="form-signin fos_user_registration_register" action="{{ path('fos_user_registration_register') }}" method="post">
+    <label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>
+    <input type="email" class="form-control" placeholder="Email"
+            id="fos_user_registration_form_email"
+            name="fos_user_registration_form[email]"
+            required="required" autocomplete="email" />
+
+    <label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>
+    <input type="text" class="form-control" placeholder="Username"
+            id="fos_user_registration_form_username"
+            name="fos_user_registration_form[username]"
+            maxlength="180" pattern=".{2,}"
+            required="required" autocomplete="username" />
+
+    <label for="password" class="sr-only">
+      {{ 'security.login.password'|trans }}
+    </label>
+    <input type="password" id="fos_user_registration_form_plainPassword_first"
+           name="fos_user_registration_form[plainPassword][first]"
+           class="form-control" placeholder="Password"
+           required="required" autocomplete="new-password" />
+
+    <label for="password" class="sr-only">
+      {{ 'security.login.password'|trans }}
+    </label>
+    <input type="password" id="fos_user_registration_form_plainPassword_second"
+           name="fos_user_registration_form[plainPassword][second]"
+           class="form-control" placeholder="Password"
+           required="required" autocomplete="new-password" />
+
+     <div>
+         <input type="submit" class="btn btn-lg btn-primary btn-block"
+                value="{{ 'registration.submit'|trans }}" />
+     </div>
+</form>
