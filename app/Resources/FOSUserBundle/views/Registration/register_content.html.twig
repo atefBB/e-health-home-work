@@ -1,12 +1,5 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" class="btn btn-lg btn-primary btn-block"
-               value="{{ 'registration.submit'|trans }}" />
-    </div>
-{{ form_end(form) }}
 <form class="form-signin fos_user_registration_register" action="{{ path('fos_user_registration_register') }}" method="post">
     <label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>
     <input type="email" class="form-control" placeholder="Email"
@@ -41,4 +34,7 @@
          <input type="submit" class="btn btn-lg btn-primary btn-block"
                 value="{{ 'registration.submit'|trans }}" />
      </div>
+     <input type="hidden" id="fos_user_registration_form__token"
+            name="fos_user_registration_form[_token]"
+            value="{{ form._token.vars.value }}">
 </form>
