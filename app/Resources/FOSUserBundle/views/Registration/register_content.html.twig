@@ -1,14 +1,16 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 <form class="form-signin fos_user_registration_register" action="{{ path('fos_user_registration_register') }}" method="post">
-    <label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>
-    <input type="email" class="form-control" placeholder="Email"
+    <label for="username" class="sr-only">{{ 'profile.show.email'|trans }}</label>
+    <input type="email" class="form-control"
+            placeholder="{{ 'profile.show.email'|trans }}"
             id="fos_user_registration_form_email"
             name="fos_user_registration_form[email]"
             required="required" autocomplete="email" />
 
     <label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>
-    <input type="text" class="form-control" placeholder="Username"
+    <input type="text" class="form-control"
+            placeholder="Username"
             id="fos_user_registration_form_username"
             name="fos_user_registration_form[username]"
             maxlength="180" pattern=".{2,}"
@@ -19,7 +21,7 @@
     </label>
     <input type="password" id="fos_user_registration_form_plainPassword_first"
            name="fos_user_registration_form[plainPassword][first]"
-           class="form-control" placeholder="Password"
+           class="form-control" placeholder="{{ 'security.login.password'|trans }}"
            required="required" autocomplete="new-password" />
 
     <label for="password" class="sr-only">
@@ -27,7 +29,7 @@
     </label>
     <input type="password" id="fos_user_registration_form_plainPassword_second"
            name="fos_user_registration_form[plainPassword][second]"
-           class="form-control" placeholder="Password"
+           class="form-control" placeholder="{{ 'security.login.password'|trans }}"
            required="required" autocomplete="new-password" />
 
      <div>
